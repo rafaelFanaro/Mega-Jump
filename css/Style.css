@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+@keyframes shot{
+    0%{right: 11%;}
+    100%{right: 100%;}
+}
+
+@keyframes jump{
+    0%{bottom: 5%;}
+    20%{bottom: 30%;}
+    80%{bottom: 30%;}
+    100%{bottom: 5%;}
+}
+
+@keyframes float{
+    0%{bottom: 5%;}
+    50%{bottom: 10%;}
+    100%{bottom: 5%;}
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    font-size: 3em;
+}
+
+#scene{
+    position: relative;
+    display: grid;
+    width: 80vw;
+    height: 40vw;
+    margin: 3% auto;
+    border: solid;
+    overflow: hidden;
+}
+
+    #hero{
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        width: 15%;
+        z-index: 1;
+    }
+
+        #hero.start {
+            height: 22%;
+            width: 10%;
+            bottom: 7%;
+            left: 2%;
+        }
+
+        .jump{
+            animation: jump 700ms ease-out;
+        }
+
+    #villain{
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+        width: 15%;
+        z-index: 1;
+    }
+        
+        .float {
+            animation: 500ms normal 0s infinite float linear;
+        }
+    
+    #fireball{
+        transform: rotate(90deg);
+        position: absolute;
+        bottom: 10%;
+        width: 7%;
+        right: -7%;
+        z-index: 1;
+    }
+        .shoot{
+            animation: 800ms infinite shot linear;
+        }
+
+    #score{
+        position: absolute;
+        bottom: 70%;
+        justify-self: center;
+        font-size: 2em;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        z-index: 1;
+    }
+
+    #sky{
+        position: absolute;
+        width: 100%;
+        height: 85%;
+        background-image: linear-gradient(rgb(0, 162, 255), rgb(188, 231, 255));
+    }
+
+    #floor{
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        background-image: linear-gradient(rgb(117, 105, 105),rgb(133, 120, 120),rgb(117, 105, 105));
+        top: 85%;
+    }
